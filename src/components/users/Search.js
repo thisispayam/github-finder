@@ -30,8 +30,8 @@ const Search = (props) =>  {
                     <input type="text" name="text" placeholder="Search users..." onChange={changeHandler} value={text} />
                     <button className='btn btn-dark btn-block'>Search</button>
                 </form>
-                {props.showClear && (
-                    <button className='btn btn-light btn-block' onClick={props.clearUsers}>Clear</button>      
+                {githubContext.users.length > 0 && (
+                    <button className='btn btn-light btn-block' onClick={githubContext.clearUsers}>Clear</button>      
                 )}
                          
             </div>
@@ -40,8 +40,6 @@ const Search = (props) =>  {
     }
 
 Search.propTypes = {
-    clearUsers: PropTypes.func.isRequired,
-    showClear: PropTypes.bool.isRequired,
     setAlert: PropTypes.func.isRequired
 }
 
