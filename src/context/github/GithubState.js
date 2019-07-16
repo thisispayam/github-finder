@@ -16,7 +16,7 @@ import {
 
 const GithubState = (props) => {
     const initialState = {
-        user: [],
+        users: [],
         user:{},
         repos:[],
         loading: false,
