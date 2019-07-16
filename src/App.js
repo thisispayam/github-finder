@@ -27,8 +27,8 @@ const App =() => {
     setLoading(false);
   };
   useEffect(() => { 
-    fetchUsers(users) 
-  }, [users]);
+    fetchUsers() 
+  }, []);
 
   //get a single Github user
   const getUser = async (username) => {
