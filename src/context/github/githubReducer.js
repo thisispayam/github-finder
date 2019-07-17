@@ -24,7 +24,7 @@ export default (state, action) => {
         case GET_REPOS:
             return {
                 ...state,
-                users: action.payload,
+                repos: action.payload,
                 loading: false,
                 alert: null
             }
