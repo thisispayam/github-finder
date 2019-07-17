@@ -23,6 +23,13 @@ export default (state, action) => {
                 loading: false,
                 alert: null
             }
+        case GET_REPOS:
+            return {
+                ...state,
+                users: action.payload,
+                loading: false,
+                alert: null
+            }
         case CLEAR_USERS:
             return {
                 ...state,
