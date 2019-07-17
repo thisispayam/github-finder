@@ -17,8 +17,7 @@ const GithubState = (props) => {
         users: [],
         user:{},
         repos:[],
-        loading: false,
-        alert: null
+        loading: false
     }
 
 
@@ -33,8 +32,6 @@ const GithubState = (props) => {
             type: SEARCH_USERS,
             payload: res.data.items
         });
-
-        // setAlert(null);
     }
 
     // Get User
@@ -59,8 +56,7 @@ const GithubState = (props) => {
          ${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
         dispatch({
             type: GET_REPOS,
-            payload: res.data,
-            alert: null
+            payload: res.data
         });
     }
 
@@ -74,7 +70,7 @@ const GithubState = (props) => {
 
     //providing these props for the entire app
     return (
-        <GithubContext.Provider value={{ users: state.users, user: state.user, repos: state.repos, loading: state.loading, alert: state.alert, searchUsers, clearUsers, getUser, getUserRepos}}>
+        <GithubContext.Provider value={{ users: state.users, user: state.user, repos: state.repos, loading: state.loading, searchUsers, clearUsers, getUser, getUserRepos}}>
         {props.children}
         </GithubContext.Provider>
     );
